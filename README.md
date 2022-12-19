@@ -6,7 +6,7 @@
 AIひろゆき音声利用しています。
 Voiced by https://CoeFont.cloud
 
-## 
+## Description
 
 [【画像認識】AIひろゆきがスプラトゥーン3のキルデス報告してくれるアプリ作った話](https://qiita.com/Kazuma_Kikuya/items/71644455015a30a01571)
 
@@ -27,17 +27,17 @@ https://CoeFont.cloudにて事前に生成した音声データを読み上げ�
 ※ブキの分類にテンプレートマッチングを利用していますが、ゲーム画面からから抽出テンプレート画像を配布することは権利上問題ありそうなので各自で用意してassetsディレクトリに置いてください。
 
 # Demo
+
 https://www.youtube.com/watch?v=zgMndF3gcMI
 
 ## Usage
 
-キャプチャボードが必要です。
-nintendo switch <---> キャプチャボード <---> PC　と接続してください。 
-
+キャプチャボードが必要です。nintendo switch <---> キャプチャボード <---> PC　と接続してください。 
 assetsディレクトリにブキテンプレートを用意します。
 
-python main.py
-
+```
+$ python test.py
+```
 バトル開始時するとゲージ表示のGUIが表示され。読み上げが開始されます。
 
 ## Requirement
