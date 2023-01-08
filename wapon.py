@@ -71,7 +71,20 @@ arr.append( Wapon("try","トライストリンガー","弓","megaphone"))
 arr.append( Wapon("lact","LACT-450","ラクト","multimissile"))
 arr.append( Wapon("drive","ドライブワイパー","ワイパー","ultrahanco"))
 arr.append( Wapon("gym","ジムワイパー","ジムワイパー","syokuwonder"))
-
+# Chill Season 追加ブキ
+arr.append( Wapon("momiji","もみじシューター","もみじ","hopsonar"))
+arr.append( Wapon("susikora","スプラシューターコラボ","スシコラ","tripletornado"))
+arr.append( Wapon("purakora","プライムシューターコラボ","プラコラ","nicedama"))
+arr.append( Wapon("kinmode","プロモデラーRG","金モデ","nicedama"))
+arr.append( Wapon("supesyu","スペースシューター","スペシュ","megaphone"))
+arr.append( Wapon("novaneo","ノヴァブラスターネオ","ノヴァネオ","ultrahanco"))
+arr.append( Wapon("ka-deco","カーボンローラーデコ","カーデコ","ultrashot"))
+arr.append( Wapon("wide","ワイドローラー","ワイロラ","kyu-inki"))
+arr.append( Wapon("pabuhyu","パブロ・ヒュー","パヒュー","ultrahanco"))
+arr.append( Wapon("rpen","R-PEN/5H","アルペン","energystand"))
+arr.append( Wapon("supahyu","スパッタリー・ヒュー","スパヒュー","sameride"))
+arr.append( Wapon("bakedeco","バケットスロッシャーデコ","バケデコ","syokuwonder"))
+arr.append( Wapon("supikora","スプラスピナーコラボ","スピコラ","barrier"))
 
 # 配列を辞書に入れ替える
 for wapon in arr:
