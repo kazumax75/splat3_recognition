@@ -539,7 +539,7 @@ def アイコンの位置検出と取得(frame, frame2):
     
     return
 
-def ゲーム開始画面がチェックしイカアイコンを保存(frame):
+def ゲーム開始画面がチェックしイカアイコンを保存(frame, path):
     isStart = バトル開始画面の状態検出(frame)
     is_ready_queue.appendleft(isStart)
     
@@ -551,9 +551,9 @@ def ゲーム開始画面がチェックしイカアイコンを保存(frame):
         ally_imgs, enemy_imgs = バトル開始画面からブキアイコンを切り出す(frame)
         
         for i, im in enumerate(ally_imgs):
-            cv2.imwrite('./assets/icons_asset/'+fn+str(i)+".bmp", im)
+            cv2.imwrite(path+fn+str(i)+".bmp", im)
         for i, im in enumerate(enemy_imgs):
-            cv2.imwrite('./assets/icons_asset/'+fn+str(i+4)+".bmp", im)
+            cv2.imwrite(path+fn+str(i+4)+".bmp", im)
         
     
 def バトル開始画面からブキアイコンを切り出す(frame):

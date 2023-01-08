@@ -19,7 +19,6 @@ if __name__ == '__main__':
             
             de.マップ開いてるかチェックしギア読み上げ(frame)
             de.ゲーム開始画面かチェックしブキを分類(frame)
-            de.ゲーム開始画面がチェックしイカアイコンを保存(frame)
             
             isPlaying = de.アイコン位置認識可能状態かどうか(frame)
             if isPlaying:
