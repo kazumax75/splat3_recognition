@@ -1,5 +1,10 @@
 import cv2
 import splat_recognition as de
+from collections import Counter
+import random, string
+import os
+import collections
+import time
 
 if __name__ == '__main__':
     writingFlag = False
@@ -37,7 +42,17 @@ if __name__ == '__main__':
         elif key == ord('q'):
             #qキーで終了
             break
+        elif key == 32:# スペースキー
+            if writingFlag:
+                print("録画停止。")
+                writingFlag = False
+                write_count = 0
                 
+            elif writingFlag == False and ret :
+                print("録画開始！！")
+                writingFlag = True
+                dir_name = ''.join(random.choices(string.ascii_letters + string.digits, k=10))
+                os.makedirs('./capture/'+dir_name, exist_ok=True)
 
     # メモリを解放して終了
     cap.release()
