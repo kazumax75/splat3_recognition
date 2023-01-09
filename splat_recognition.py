@@ -579,7 +579,8 @@ def アイコン位置認識可能状態かどうか(frame):
         # isPlaing = イカアイコンが存在するか検出(frame)
         
         # 4F中1こでもtrueならOK
-        is_playing_queue.appendleft( イカアイコンが存在するか検出(frame) )
+        # is_playing_queue.appendleft( イカアイコンが存在するか検出(frame) )
+        is_playing_queue.appendleft( イカアイコンが存在するか検出＿右上サブウエポンアイコンベース(frame) )
         
         isPlaing = any( is_playing_queue )
         return isPlaing
@@ -714,44 +715,34 @@ def イカアイコンが存在するか検出(frame):
     return True
 
 def イカアイコンが存在するか検出＿右上サブウエポンアイコンベース(frame):
-    img = frame[28-7:87+7, 1682-7:1741+7]
+    img = frame[28-12:87+12, 1682-12:1741+12]
     
     # 右上のサブウエポンの黄色丸アイコン探す　存在する時
     mask = cv2.inRange(img, 
     (
-        51-20,
-        252-20,
-        231-20,
+        51-10,
+        252-10,
+        231-10,
     ), (
-        51+20,
-        252+20,
-        231+20,
+        51+10,
+        252+10,
+        231+10,
     ))
-    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(9,9) )
+    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(10, 10) )
     mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
-    # cv2.imshow("sub maru", mask)
     
     contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+    
     filterdContours = []
-    _perimeter = 0
     for contour in contours:
-        _x, _y, _w, _h = cv2.boundingRect(contour)
-        if 57 <= _w <= 60 and 57 <= _h <= 60:
-            _perimeter = cv2.arcLength(contour, True)
-            # print(_w, _h, _perimeter)
-            filterdContours.append(contour)
-            return True
-    if _perimeter == 0: return False
+        filterdContours.append(contour)
     cv2.drawContours(mask, contours, -1, color=(255, 255, 255), thickness=-1)
     
     contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
     
     for contour in contours:
-        _s = cv2.contourArea(contour)
-        # 円形度算出
-        r = (4*math.pi*_s) / _perimeter**2
-        # print("円形度算出", r)
-        if r >= 0.6:
+        _x, _y, _w, _h = cv2.boundingRect(contour)
+        if 50 <= _w <= 60 and 50 <= _h <= 60:
             return True
 
     return False
