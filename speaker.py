@@ -110,9 +110,18 @@ class Speaker:
         
         return
         
-    def ブキやられ(self, wapon_file_name):
-        t = threading.Thread(target=play, args=(self.yarareta[wapon_file_name],))
-        t.start()
+    def ブキやられ(self, wapon_file_name, ally_death_num):
+        # t = threading.Thread(target=play, args=(self.yarareta[wapon_file_name],))
+        # t.start()
+        
+        if ally_death_num == 2:
+            t = threading.Thread(target=play, args=(self._2oti,))
+            t.start()
+            
+        if ally_death_num == 3:
+            t = threading.Thread(target=play, args=(self._3oti,))
+            t.start()
+            
         
         return
     

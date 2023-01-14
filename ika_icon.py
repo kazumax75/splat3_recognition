@@ -100,7 +100,7 @@ class ICON:
             
             if self.team == s.TEAM.ALLY:
                 ICON.ally_death_num += 1
-                self.speaker.ブキやられ(self.wapon.filename)
+                self.speaker.ブキやられ(self.wapon.filename, ICON.ally_death_num)
             elif self.team == s.TEAM.ENEMY:
                 self.speaker.ブキやり(self.wapon.filename)
                 ICON.enemy_death_num += 1
@@ -151,7 +151,7 @@ class ICON:
             # SP抱え落ち
             if self.team == s.TEAM.ALLY:
                 ICON.ally_death_num += 1
-                self.speaker.ブキやられ(self.wapon.filename)
+                self.speaker.ブキやられ(self.wapon.filename, ICON.ally_death_num)
             elif self.team == s.TEAM.ENEMY:
                 self.speaker.ブキ抱え落ち(self.wapon.filename)
                 ICON.enemy_death_num += 1
