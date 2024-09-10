@@ -554,6 +554,16 @@ def ゲーム開始画面がチェックしイカアイコンを保存(frame, pa
             cv2.imwrite(path+fn+str(i)+".bmp", im)
         for i, im in enumerate(enemy_imgs):
             cv2.imwrite(path+fn+str(i+4)+".bmp", im)
+            
+def ゲーム開始画面がチェックし画面のキャプチャ保存(frame, path):
+    isStart = バトル開始画面の状態検出(frame)
+    is_ready_queue.appendleft(isStart)
+    
+    if (is_ready_queue[1] == False and 
+        is_ready_queue[0] == True):
+        fn =  datetime.datetime.now().strftime('%Y%m%d_%H%M')# 保存するファイル名は時刻ベースの乱数
+        cv2.imwrite(path + fn +".bmp", frame)
+        print("開始画面保存しました。", (path + fn +".bmp") )
         
     
 def バトル開始画面からブキアイコンを切り出す(frame):

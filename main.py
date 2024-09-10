@@ -24,6 +24,8 @@ if __name__ == '__main__':
             
             de.マップ開いてるかチェックしギア読み上げ(frame)
             de.ゲーム開始画面かチェックしブキを分類(frame)
+            de.ゲーム開始画面がチェックし画面のキャプチャ保存(frame, "./capture/")
+            de.イカアイコンが存在するか検出＿右上サブウエポンアイコンベース(frame)
             
             isPlaying = de.アイコン位置認識可能状態かどうか(frame)
             if isPlaying:
